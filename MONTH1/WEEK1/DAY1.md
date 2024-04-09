@@ -2,11 +2,11 @@
 
 ## Things done :
 
-- Read the lecture [Lien](../../ressources/LayoutAnalysis2012.pdf)
+- Read the article [Lien](../../ressources/LayoutAnalysis2012.pdf)
 - Read the blog article [Lien](https://digitalorientalist.com/2023/11/03/11400/)
 - Started Julia learning [Lien](https://github.com/JuliaAcademy/Introduction-to-Julia)
 
-### Read the lecture [Lien](../../ressources/LayoutAnalysis2012.pdf)
+### Read the article [Lien](../../ressources/LayoutAnalysis2012.pdf)
 
 Ce document est une étude sur l'analyse de la mise en page de documents historiques arabes en utilisant l'apprentissage automatique. 
 
