@@ -11,7 +11,7 @@ Learnt:
 
 How to use Pluto docs 
 
-#### (Lecture 1)[https://computationalthinking.mit.edu/Fall20/lecture1/]
+#### (Module 1)[https://computationalthinking.mit.edu/Fall22/images_abstractions/images/]
 
 ##### Images are arrays of colors
 
@@ -42,4 +42,3 @@ SO When blurring an image:
 Kernel Selection (Item B): Choose a blur filter (like the average filter shown).
 Apply Kernel to Image (Item A to Item C): For each pixel in the original image (Item A), apply the kernel in such a way that the new image (Item C) at each pixel is the average of the original pixel and its neighbors as defined by the kernel.
 
-#### (Lecture 2)[https://computationalthinking.mit.edu/Fall20/lecture2/]
