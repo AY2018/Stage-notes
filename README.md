@@ -6,7 +6,8 @@ Mon objectif principal aujourd'hui est de maitriser les bases de JuliaImages et 
 
 ## JuliaImages
 
-(Pluto Notebook)[https://github.com/AY2018/Stage-notes/blob/main/ressources/JuliaImages_Bases]
+***Pluto Notebook***
+[https://github.com/AY2018/Stage-notes/blob/main/ressources/JuliaImages_Bases]
 
 - change saturation of an Image
 - grayscale 
@@ -51,4 +52,10 @@ Un dataset peut contenir des éléments de base comme des tableaux numériques, 
 
 Uilisé pour stocker des métadonnées sur les datasets et les groupes. Cela peut inclure des descriptions, des timestamps, ou d'autres données annotatives
 
-(Exercice ajout image + description + xml)[https://github.com/AY2018/Stage-notes/blob/main/ressources/hdf5.jl]
+***Exercice ajout image + description + xml***
+[https://github.com/AY2018/Stage-notes/blob/main/ressources/hdf5.jl]
+
+![](./ressources/terminalHDF5.png)
+![](./ressources/HDFView.png)
+
+###
