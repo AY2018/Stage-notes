@@ -47,3 +47,5 @@ Un dataset peut contenir des éléments de base comme des tableaux numériques, 
 #### Attribut = données sur des données (=propriétés)
 
 Uilisé pour stocker des métadonnées sur les datasets et les groupes. Cela peut inclure des descriptions, des timestamps, ou d'autres données annotatives
+
+(Exercice ajout image + description + xml)[https://github.com/AY2018/Stage-notes/blob/main/ressources/hdf5.jl]
