@@ -5,6 +5,9 @@ Comme je ne suis pas satisfait de mon avancé hier, j'ai décidé de passer dire
 Mon objectif principal aujourd'hui est de maitriser les bases de JuliaImages et pouvoir réaliser la segmentation que l'on m'a demandé de réaliser hier. 
 
 ## JuliaImages
+
+(Pluto Notebook)[https://github.com/AY2018/Stage-notes/blob/main/ressources/JuliaImages_Bases]
+
 - change saturation of an Image
 - grayscale 
 - Custom Color Filter
