@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="recap-1-semaine-1---2">RECAP 1 (Semaine 1 - 2)</h1>
+<ol>
+<li>Apprentissage de Julia</li>
+<li>Image Processing</li>
+<li>Sujet du stage (Segmentation)</li>
+</ol>
+<h2 id="1-apprentissage-de-julia">1. Apprentissage de Julia</h2>
+<h3 id="les-types">Les types</h3>
+<h4 id="int-et-float">Int et Float</h4>
+<p>Je connaissais déjà les types <code>sting, bool, int, float</code></p>
+<p>Sur Julia, on peut préciser la quantité de mémoire que l'on compte attribuer à un type numérique (int ou float)</p>
+<p>Int8/16/32/64
+UInt8/16/32/64 (only non-negative values)
+Float32/64 (32 = 7 decimal, 64 = 15)</p>
+<p><strong>Quel est l'intérêt ?</strong></p>
+<ul>
+<li>Memory efficiency: Using the appropriate type saves memory, which can be crucial when dealing with large datasets of images</li>
+<li>Performance: Operations on smaller types are generally faster.</li>
+<li>Precision and range: Choosing between integers and floating-points can affect both the precision of the calculations and the range of values you can represent.</li>
+</ul>
+<p>==&gt; All of these reasons apply to our project for when we'll be doing machine learning.</p>
+<h4 id="symbole">Symbole</h4>
+<p>Le <code>symbole</code> est un type que je ne connaissais pas. Si j'ai bien compris, un symbole = strings mais pas vraiment.</p>
+<p>Symbole est plus facile à comparer car stocké qu'une seule fois (on compare les memory adress plutôt que le contenu, ce qui est plus rapide)</p>
+<p><strong>Quand utilisé symbole plutôt que string?</strong></p>
+<ul>
+<li>symbols when you need an efficient, immutable key that doesn't change and needs to be compared quickly.</li>
+<li>strings when you need to manipulate text data + splitting, concatenating, or altering the content.</li>
+</ul>
+<h3 id="data-structures">Data Structures</h3>
+<h4 id="tulpe">Tulpe</h4>
+<p>Tableau qu'on ne peut pas modifier</p>
+<h4 id="arraymatrix--tableau-de-donn%C3%A9e-%C3%A0-n-dimensions">Array/Matrix = tableau de donnée à N dimensions</h4>
+<p>Image = array
+Méthodes pour manipuler une image (selectionner une partie, changer la couleur)</p>
+<pre class="hljs"><code><div>img_variable[top:bottom, left:right] <span class="hljs-comment"># Access a portion of an image</span>
+</div></code></pre>
+<h4 id="dictionnaires">Dictionnaires</h4>
+<p>Dictionnaire = associe valeur à une clé</p>
+<pre class="hljs"><code><div>my_dict = <span class="hljs-built_in">Dict</span>(key1 =&gt; value1, key2 =&gt; value2)
+my_dict[<span class="hljs-string">"key1"</span>]  <span class="hljs-comment"># Output = value1</span>
+</div></code></pre>
+<h4 id="dataframes">Dataframes</h4>
+<ul>
+<li>Fancy arrays</li>
+<li>Used when dealing with lots of data</li>
+<li>Need to be cleaned so that the data is easily processed(remove unwanted &quot;,&quot; in floats, convert strings to floats, add ids, check if there are any NaN)</li>
+<li>Created one using xlsx file but can do the same in csv and xml</li>
+</ul>
+<h3 id="hdf5">HDF5</h3>
+<p>HDF5 = est un format de fichier conçu pour stocker et organiser de grandes quantités de données numériques grâce à sa structure flexible et hiérarchique. (HDF5 = classeur).</p>
+<p>Données sont stockées en groupes (dossiers), datasets (fichiers), et Attributs (metadata des datasets)</p>
+<h4 id="proposition-de-structure-hdf5-pour-le-projet">Proposition de Structure HDF5 pour le projet</h4>
+<p>Chaque manuscrit sera stocké dans un groupe principal, avec un sous-groupe pour les images et un autre pour les textes transcrits. Cette structure permet de séparer clairement les différents types de contenu tout en maintenant leur association sous le même manuscrit.</p>
+<p>Exemple :</p>
+<pre class="hljs"><code><div>Manuscrit001/Images/Page001 - Image stockée numériquement
+
+Manuscrit001/Textes/Page001 - Transcription
+</div></code></pre>
+<h3 id="op%C3%A9rations">Opérations</h3>
+<h4 id="broadcast">Broadcast</h4>
+<pre class="hljs"><code><div>random = rand(<span class="hljs-number">10</span>) <span class="hljs-comment">#Create a  matrix with 10 random values </span>
+chaque_valeur = sin.(random) <span class="hljs-comment"># Apply sin() to each value</span>
+toute_matrix = sin(random) <span class="hljs-comment"># Apply sin() to the entire array</span>
+</div></code></pre>
+<h4 id="array-comprehension--conditions">Array comprehension + conditions</h4>
+<pre class="hljs"><code><div><span class="hljs-comment"># Generate numbers from 1 to 10, squared, only if they are even</span>
+squares = [i^<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">10</span> <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]
+
+<span class="hljs-comment"># Double for loops that change the colors of a matrix </span>
+[RGB(i, j, <span class="hljs-number">0</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>:<span class="hljs-number">0.1</span>:<span class="hljs-number">1</span>, j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>:<span class="hljs-number">0.1</span>:<span class="hljs-number">1</span>]
+</div></code></pre>
+<h3 id="plots">Plots</h3>
+<p>Possible de créer plusieurs types de plots via le package <code>Plots</code></p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Différents types de plots </span>
+p1 = plot(x, y, title=<span class="hljs-string">"Line"</span>, legend=<span class="hljs-literal">false</span>)
+p2 = scatter(x, y, title=<span class="hljs-string">"Scatter"</span>, legend=<span class="hljs-literal">false</span>)
+p3 = bar(x, z, title=<span class="hljs-string">"Bar"</span>, legend=<span class="hljs-literal">false</span>)
+p4 = histogram(z, title=<span class="hljs-string">"Histogram"</span>, bins=<span class="hljs-number">5</span>, legend=<span class="hljs-literal">false</span>)
+</div></code></pre>
+<h3 id="geniejl">Genie.jl</h3>
+<p>Framework pour faire du web via julia</p>
+<p>Possible de créer des SPA (Single Page App) intéractives avec des graphiques qui varient en fonctino d'une variable binded à un slider.</p>
+<p>Je n'ai fais que check the tip of the iceberg et il faut beaucoup plus de recherches, de documentation et de pratiques si je veux atteindre l'objectif final. (<em><strong>Moi qui est l'habitude de trouver des tutos complets sur Youtube pour apprendre les bases d'un framework, je me retrouve à toucher à un framework qui n'a presque aucun tuto vidéo. Il n'y a personne pour me tenir la main, ce qui est très intéressant et m'oblige à sortir de ma zone de connfort</strong></em>)</p>
+<h2 id="2-le-traitement-dimage-en-7-%C3%A9tapes">2. Le Traitement d'image en 7 étapes</h2>
+<h3 id="%C3%A9tape-1--quest-ce-quune-image">Étape 1 : Qu'est ce qu'une image ?</h3>
+<p>Une image numérique = une matrice rectangulaire composée de pixels. Chaque pixel = une couleur.</p>
+<p>Les coordonnées d'un pixel sont généralement définies avec l'origine (0,0) située au coin supérieur gauche de l'image. L'axe des x s'étend vers la droite et l'axe des y vers le bas.</p>
+<p>Les images en couleur sont souvent composées de trois canaux (Rouge, Vert, Bleu ou RGB). Chaque canal a sa propre matrice de valeurs de pixels qui, combinées, déterminent la couleur finale de chaque pixel.</p>
+<h3 id="%C3%A9tape-2--comment-modifier-une-image">Étape 2 : Comment modifier une Image ?</h3>
+<ul>
+<li>On peut rotate (pour les manuscrits chinois)</li>
+<li>On peut crop/couper une image</li>
+<li>On peut la mettre en grayscale (simplifie le processus/calculs car rassemble les 3 canaux RGB en un seul +  facilite le thresholding)</li>
+<li>On peut la binariser</li>
+</ul>
+<h3 id="%C3%A9tape-3--masker-une-image">Étape 3 : Masker une image</h3>
+<p>On peut créer un mask sur une image pour choisir les éléments spécifiques que l'on veut étudier.</p>
+<h3 id="%C3%A9tape-4--cr%C3%A9er-des-histogrames">Étape 4 : Créer des Histogrames</h3>
+<p>On peut utiliser les histogrames pour analyser la répartition des pixels (leur valeur) sur une image. On peut ainsi trouver un niveau de seuil. On peut également trouver nos régions d'intérêts (les lignes) on analysant la somme des pixels par ligne.</p>
+<h3 id="%C3%A9tape-5--blur">Étape 5 : Blur</h3>
+<p>Ajouter un effet de blur permet d'affiner les extrémités et d'enlever du bruit.</p>
+<p>Souvent utilisé avant le thresholding.</p>
+<p>On utilise un Gaussian Blur (appliqué via un kernel = une matrix impaire 3x3, 5x5 qui va passer par chaque pixel et effectuer une multiplication de chaque pixel autour par le pixel associé du kernel et transformer la valeur du pixel centrale par la moyenne des valeurs obtenues par l'opération)</p>
+<p>On peut également utilise la différence de deux blurs pour séparer le background de l'objet étudié (DoG)</p>
+<h3 id="%C3%A9tape-6--thresholdingseuillage">Étape 6 : Thresholding/Seuillage</h3>
+<p>Produit une image binaire (pixels = 0 ou 1 en fonction de leur valeur comparée au threshold).</p>
+<p>Permet d'enlever les éléments qui ne nous intéressent pas.</p>
+<h3 id="%C3%A9tape-7--connected-component-analysis">Étape 7 : Connected Component Analysis</h3>
+<p>Connected Components = permet de trouver des objets.</p>
+<p>Logique : On part d'un pixel (qui est =1) et on se déplace d'un pixel horizontalement, puis verticalement, si on tombe sur un autre pixel = 1, alors les deux font partie d'un objet.</p>
+<p>Ce jump peut être de deux pixels par axe.</p>
+<h3 id="%C3%A9tape-suppl%C3%A9mentaire--morphologie">Étape supplémentaire : Morphologie</h3>
+<p>On peut effectuer une érosion de l'image (qui va éliminer du bruit, mais également affiner l'objet) et/ou une dilatation (inverse).</p>
+<p>Opening = erosion + dilatation (enlver du bruit, puis remplir l'objet qui s'est affiné)</p>
+<p>Closing = opératino inverse.</p>
+
+</body>
+</html>
